@@ -2,8 +2,9 @@
   "name": "vsc-logtalk",
   "displayName": "VSC-Logtalk",
   "description": "Support for Logtalk language",
-  "version": "0.1.16",
+  "version": "0.1.0",
   "publisher": "arthurwang",
+  "icon": "images/logtalk.png",
   "license": "MIT",
   "engines": {
     "vscode": "^1.6.0"
