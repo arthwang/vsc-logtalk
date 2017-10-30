@@ -3,7 +3,7 @@
 !out/src/**/*.js
 !out/src/**/*.pi
 !snippets/*.json
-!syntaxes/*.json
+!syntaxes/*.tmLanguage
 !images/**/*
 !README.md
 !package.json

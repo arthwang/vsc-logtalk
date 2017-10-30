@@ -14,8 +14,9 @@
 doc_root("http://localhost/logtalk3doc/refman/").
 
 gen_snippets :-
+    nb_linkval(snippets_dict, _{}),
     retractall(html_file(_)),
-    read_json("../../snippets/entities.json"),
+    read_json("../../snippets/snippets.json"),
     handle_directives,
     Others = ["predicates", "methods" , "control"],
     foreach(member(SubDir, Others), handle_other(SubDir)),
@@ -77,7 +78,7 @@ handle_document(SubDir, Html) :-
     atom_concat(":- ", DirecName, Prefix),
     dict_create(Dict,
                 _,
-                [prefix:Prefix, body:FullBody, description:FullDesc]),
+                [prefix:Prefix, body:FullBody, description:FullDesc, scope: "source.logtalk"]),
     add_to_dict(Key, Dict), !.
 handle_document(_, _).
 

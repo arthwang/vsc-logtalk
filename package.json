@@ -38,7 +38,7 @@
       {
         "language": "logtalk",
         "scopeName": "source.logtalk",
-        "path": "./syntaxes/logtalk.tmLanguage.json"
+        "path": "./syntaxes/Logtalk.tmLanguage"
       }
     ],
     "snippets": [
@@ -68,11 +68,11 @@
     "keybindings": [
       {
         "command": "logtalk.linter.nextErrLine",
-        "key": "f8"
+        "key": "f7"
       },
       {
         "command": "logtalk.linter.prevErrLine",
-        "key": "shift+f8"
+        "key": "shift+f7"
       },
       {
         "command": "logtalk.load.document",
@@ -109,6 +109,13 @@
           "description": "Arguments of Logtalk executable run in terminal.",
           "default": []
         }
+      }
+    },
+    "configurationDefaults": {
+      "[logtalk]": {
+        "editor.tabSize": 4,
+        "editor.insertSpaces": false,
+        "editor.wordWrap": "on"
       }
     }
   },

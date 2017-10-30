@@ -32,10 +32,49 @@ This extension can be installed via extensions viewlet of VS Code or 'Extensions
    
    > The snippets for built-ins all are triggered by natural prefix, i.e. ':- public' triggers ':- public()' directive. You needn't to type all charaters to show up the suggestion list.
 
+   > Refter to the table below for other snippets:
+   
+  Prefix|Description
+  |:--|:--
+  :- obj| Object
+  :- cat| Category
+  :- pro| Protocol
+  orel| relations between objects(choice)
+  crel| relations between categories(choice)
+  ext| relations between categories
+  category| Category with protocol
+  category| Category
+  class| Class with all
+  class| Class with category
+  class| Class with metaclass
+  class| Class with protocol
+  class| Class
+  category| Complementing category
+  category| Extended category
+  protocol| Extended protocol
+  instance| Instance with all
+  instance| Instance with category
+  instance| Instance with protocol
+  instance| Instance
+  private| (with no arguments)
+  private| Private predicate
+  protected| (with no arguments)
+  protected| Protected predicate
+  protocol| Protocol
+  object| Prototype with all
+  object| Prototype with category
+  object| Prototype with parent
+  object| Prototype with protocol
+  object| Prototype
+  public| (with no arguments)
+  public| Public predicate
   ![snippets](images/snippets.gif)
 
 ### Grammar linter
-  The grammar errors (if any) will display in OUTPUT channel when active source file is saved.
+  * The grammar errors (if any) will display in OUTPUT channel when active source file is saved.
+  
+  * Command 'Goto next/previous error':  This command (default mapping to f7/shift f7) locates the cursor at the nearest line with error/warning from current cursor location and the corresponding error/warning message displays in output channel.
+
   ![linter](images/linter.gif)
 
 
@@ -44,13 +83,14 @@ This extension can be installed via extensions viewlet of VS Code or 'Extensions
   * Command 'Logtalk: load document' 
 
     This command can be triggered from command palette or editor context menu (default map to F9). It loads the source file in active editor into logtalk process in the integrated terminal, spawning the logtalk process if run the command firstly. The logtalk process provides a real REPL console. 
+
   ![loader](images/loader.gif)
   
   > You can open Logtalk terminal indepently by 'Logtalk: open logtalk' command.
 
 ## Configurations
   
-  * There are only two settings in this extension with default values:
+  * The user can configure settings via VS Code menu File/Preferences/Settings.  Entering 'logtalk' in the input box will show up logtalk settings. There are only two settings in this extension with default values:
     * "logtalk.executablePath": "/usr/bin/logtalk",
       This setting points to the Logtalk executable. Use real path to the executable i.e. swilgt.sh if symbolic link doesn't run in VSC-Logtalk.
 
@@ -66,8 +106,7 @@ This extension can be installed via extensions viewlet of VS Code or 'Extensions
   [Pull requests](https://github.com/arthwang/vsc-logtalk/pulls) are welcome.
 
 ## Acknowledgements
-
-  The author of this extension thanks Professor Paulo Moura who is the author of Logtalk for his patient helps and supports.
+  The author of this extension thanks Professor Paulo Moura who is the author of Logtalk for his patient helps and supports. Syntax tmLanguage and some snippets are integrated from his distro of Logtalk.
 
 ## License
 
