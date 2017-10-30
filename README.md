@@ -7,7 +7,7 @@ __________________
 
 ## Note before installation
 
-This extension can be installed via extensions viewlet of VS Code or 'Extensions: install extension' command from the command palette. The author notices that it is developed and tested in ***logtalk 2.2*** and ***VS Code 1.17*** on ***Debian 9.0*** (stretch). It's not yet tested under other environments.
+This extension can be installed via extensions viewlet of VS Code or 'Extensions: install extension' command from the command palette. The author notices that it is developed and tested in ***logtalk 3.12.0*** and ***VS Code 1.17*** on ***Debian 9.0*** (stretch). It's not yet tested under other environments.
 
 ## Features
   * [Syntax highlighting](#syntax-highlighting)
@@ -34,40 +34,40 @@ This extension can be installed via extensions viewlet of VS Code or 'Extensions
 
    > Refter to the table below for other snippets:
 
-  | Prefix  | Description | 
-  | -------: | ------- |
-  |  :- obj | Object |
-  |  :- cat | Category |
-  |  :- pro | Protocol |
-  |  orel | relations between objects(choice) |
-  |  crel | relations between categories(choice) |
-  |  ext | relations between categories |
-  |  category | Category with protocol |
-  |  category | Category |
-  |  class | Class with all |
-  |  class | Class with category |
-  |  class | Class with metaclass |
-  |  class | Class with protocol |
-  |  class | Class |
-  |  category | Complementing category |
-  |  category | Extended category |
-  |  protocol | Extended protocol |
-  |  instance | Instance with all |
-  |  instance | Instance with category |
-  |  instance | Instance with protocol |
-  |  instance | Instance |
-  |  private | (with no arguments) |
-  |  private | Private predicate |
-  |  protected | (with no arguments) |
-  |  protected | Protected predicate |
-  |  protocol | Protocol |
-  |  object | Prototype with all |
-  |  object | Prototype with category |
-  |  object | Prototype with parent |
-  |  object | Prototype with protocol |
-  |  object | Prototype |
-  |  public | (with no arguments) |
-  |  public | Public predicate |
+| Prefix  | Description | 
+| -------: | ------- |
+|  :- obj | Object |
+|  :- cat | Category |
+|  :- pro | Protocol |
+|  orel | relations between objects(choice) |
+|  crel | relations between categories(choice) |
+|  ext | relations between categories |
+|  category | Category with protocol |
+|  category | Category |
+|  class | Class with all |
+|  class | Class with category |
+|  class | Class with metaclass |
+|  class | Class with protocol |
+|  class | Class |
+|  category | Complementing category |
+|  category | Extended category |
+|  protocol | Extended protocol |
+|  instance | Instance with all |
+|  instance | Instance with category |
+|  instance | Instance with protocol |
+|  instance | Instance |
+|  private | (with no arguments) |
+|  private | Private predicate |
+|  protected | (with no arguments) |
+|  protected | Protected predicate |
+|  protocol | Protocol |
+|  object | Prototype with all |
+|  object | Prototype with category |
+|  object | Prototype with parent |
+|  object | Prototype with protocol |
+|  object | Prototype |
+|  public | (with no arguments) |
+|  public | Public predicate |
 
   ![snippets](images/snippets.gif)
 

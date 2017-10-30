@@ -1,5 +1,8 @@
 # Changelog
 
+## [0.1.3]
+- fixed tiny bugs and typos
+
 ## [0.1.2]
 - tuned linter output
 
