@@ -9,8 +9,16 @@
   "engines": {
     "vscode": "^1.6.0"
   },
-  "categories": ["Languages", "Snippets", "Linters"],
-  "keywords": ["logtalk", "linter", "snippet"],
+  "categories": [
+    "Languages",
+    "Snippets",
+    "Linters"
+  ],
+  "keywords": [
+    "logtalk",
+    "linter",
+    "snippet"
+  ],
   "author": {
     "name": "Arthur Wang",
     "email": "rthrwang@gmail.com"
@@ -24,14 +32,20 @@
     "email": "rthrwang@gmail.com"
   },
   "main": "./out/src/extension",
-  "activationEvents": ["onLanguage:logtalk"],
+  "activationEvents": [
+    "onLanguage:logtalk"
+  ],
   "contributes": {
     "languages": [
       {
         "id": "logtalk",
-        "aliases": ["Logtalk"],
+        "aliases": [
+          "Logtalk"
+        ],
         "configuration": "./logtalk.configuration.json",
-        "extensions": [".lgt"]
+        "extensions": [
+          ".lgt"
+        ]
       }
     ],
     "grammars": [
@@ -124,8 +138,7 @@
     "compile": "tsc -watch -p ./",
     "postinstall": "node ./node_modules/vscode/bin/install",
     "test": "node ./node_modules/vscode/bin/test",
-    "syntax4logtalk":
-      "yaml2json --pretty --save ./syntaxes/logtalk.tmLanguage.yaml",
+    "syntax4logtalk": "yaml2json --pretty --save ./syntaxes/logtalk.tmLanguage.yaml",
     "pkgvars": "node ./node_modules/vscode/bin/install"
   },
   "devDependencies": {

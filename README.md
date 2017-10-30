@@ -36,38 +36,38 @@ This extension can be installed via extensions viewlet of VS Code or 'Extensions
 
   | Prefix  | Description | 
   | -------: | ------- |
-  |  :- obj | Object|
-  |  :- cat | Category|
-  |  :- pro | Protocol|
-  |  orel | relations between objects(choice)|
-  |  crel | relations between categories(choice)|
-  |  ext | relations between categories|
-  |  category | Category with protocol|
-  |  category | Category|
-  |  class | Class with all|
-  |  class | Class with category|
-  |  class | Class with metaclass|
-  |  class | Class with protocol|
-  |  class | Class|
-  |  category | Complementing category|
-  |  category | Extended category|
-  |  protocol | Extended protocol|
-  |  instance | Instance with all|
-  |  instance | Instance with category|
-  |  instance | Instance with protocol|
-  |  instance | Instance|
-  |  private | (with no arguments)|
-  |  private | Private predicate|
-  |  protected | (with no arguments)|
-  |  protected | Protected predicate|
-  |  protocol | Protocol|
-  |  object | Prototype with all|
-  |  object | Prototype with category|
-  |  object | Prototype with parent|
-  |  object | Prototype with protocol|
-  |  object | Prototype|
-  |  public | (with no arguments)|
-  |  public | Public predicate|
+  |  :- obj | Object |
+  |  :- cat | Category |
+  |  :- pro | Protocol |
+  |  orel | relations between objects(choice) |
+  |  crel | relations between categories(choice) |
+  |  ext | relations between categories |
+  |  category | Category with protocol |
+  |  category | Category |
+  |  class | Class with all |
+  |  class | Class with category |
+  |  class | Class with metaclass |
+  |  class | Class with protocol |
+  |  class | Class |
+  |  category | Complementing category |
+  |  category | Extended category |
+  |  protocol | Extended protocol |
+  |  instance | Instance with all |
+  |  instance | Instance with category |
+  |  instance | Instance with protocol |
+  |  instance | Instance |
+  |  private | (with no arguments) |
+  |  private | Private predicate |
+  |  protected | (with no arguments) |
+  |  protected | Protected predicate |
+  |  protocol | Protocol |
+  |  object | Prototype with all |
+  |  object | Prototype with category |
+  |  object | Prototype with parent |
+  |  object | Prototype with protocol |
+  |  object | Prototype |
+  |  public | (with no arguments) |
+  |  public | Public predicate |
 
   ![snippets](images/snippets.gif)
 
