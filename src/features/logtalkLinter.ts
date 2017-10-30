@@ -153,7 +153,7 @@ export default class LogtalkLinter implements CodeActionProvider {
             let diag = this.diagnostics[doc][si[i]];
             let severity =
               diag.severity === DiagnosticSeverity.Error ? "ERROR" : "Warning";
-            let msg = `${basename(doc)}:line:${diag.range.start.line +
+            let msg = `${basename(doc)}:${diag.range.start.line +
               1}:\t${severity}:\t${diag.message}\n`;
             this.outputChannel.append(msg);
           }
