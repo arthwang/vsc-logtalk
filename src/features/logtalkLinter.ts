@@ -89,7 +89,7 @@ export default class LogtalkLinter implements CodeActionProvider {
       : undefined;
 
     let args: string[] = [],
-      goals: string = `logtalk_compile('${textDocument.fileName}').`;
+      goals: string = `logtalk_load('${textDocument.fileName}').`;
     let lineErr: string = "";
 
     let child = spawn(this.executable, args, options)
