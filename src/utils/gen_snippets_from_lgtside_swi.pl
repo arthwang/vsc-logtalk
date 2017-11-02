@@ -53,8 +53,8 @@ handle_document(SubDir, Html) :-
     atomic_list_concat([Root, SubDir, "/", Html], Page),
     load_html(Page, Dom, []),
     writeln(Page),
-    once(xpath(Dom, //h2(text), PI)), 
-    PI =~ "^[a-z]", 
+    once(xpath(Dom, //h2(text), PI)),
+    PI=~"^[a-z]",
     atomic_list_concat([SubDir, ":", PI], Key),
     (   split_string(PI, "/", "/", [DirecName, Arity])
     ;   split_string(PI, "//", "//", [DirecName, Arity])
@@ -75,10 +75,18 @@ handle_document(SubDir, Html) :-
     xpath(Dom, //pre(2, text), Mode),
     atomic_list_concat(["Template and modes\n", Mode, "\n\nDescription", Desc],
                        FullDesc),
-    atom_concat(":- ", DirecName, Prefix),
+    (   SubDir=="directives"
+    ->  atom_concat(":- ", DirecName, Prefix)
+    ;   Prefix=DirecName
+    ),
     dict_create(Dict,
                 _,
-                [prefix:Prefix, body:FullBody, description:FullDesc, scope: "source.logtalk"]),
+                
+                [ prefix:Prefix,
+                  body:FullBody,
+                  description:FullDesc,
+                  scope:"source.logtalk"
+                ]),
     add_to_dict(Key, Dict), !.
 handle_document(_, _).
 

@@ -1,5 +1,8 @@
 # Changelog
 
+## [0.1.4]
+- fixed a bug of snippets generator
+
 ## [0.1.3]
 - fixed tiny bugs and typos
 
