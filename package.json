@@ -1,209 +1,222 @@
 {
-  "name": "vsc-logtalk",
-  "displayName": "VSC-Logtalk",
-  "description": "Support for Logtalk language",
-  "version": "0.1.5",
-  "publisher": "arthurwang",
-  "icon": "images/logtalk.png",
-  "license": "MIT",
-  "engines": {
-    "vscode": "^1.6.0"
-  },
-  "categories": ["Languages", "Snippets", "Linters"],
-  "keywords": ["logtalk", "linter", "snippet"],
-  "author": {
-    "name": "Arthur Wang",
-    "email": "rthrwang@gmail.com"
-  },
-  "repository": {
-    "type": "git",
-    "url": "https://github.com/arthwang/vsc-logtalk.git"
-  },
-  "bugs": {
-    "url": "https://github.com/arthwang/vsc-logtalk/issues",
-    "email": "rthrwang@gmail.com"
-  },
-  "main": "./out/src/extension",
-  "activationEvents": ["onLanguage:logtalk"],
-  "contributes": {
-    "languages": [
-      {
-        "id": "logtalk",
-        "aliases": ["Logtalk"],
-        "configuration": "./logtalk.configuration.json",
-        "extensions": [".lgt"]
-      }
-    ],
-    "grammars": [
-      {
-        "language": "logtalk",
-        "scopeName": "source.logtalk",
-        "path": "./syntaxes/Logtalk.tmLanguage"
-      }
-    ],
-    "snippets": [
-      {
-        "language": "logtalk",
-        "path": "./snippets/logtalk.json"
-      }
-    ],
-    "commands": [
-      {
-        "command": "logtalk.linter.nextErrLine",
-        "title": "Logtalk: Goto next error line"
-      },
-      {
-        "command": "logtalk.linter.prevErrLine",
-        "title": "Logtalk: Goto previous error line"
-      },
-      {
-        "command": "logtalk.load.document",
-        "title": "Logtalk: load document"
-      },
-      {
-        "command": "logtalk.run.test",
-        "title": "Logtalk: run test"
-      },
-      {
-        "command": "logtalk.scan.deadCode",
-        "title": "Logtalk: scan dead code"
-      },
-      {
-        "command": "logtalk.run.doclet",
-        "title": "Logtalk: run doclet"
-      },
-      {
-        "command": "logtalk.generate.htmldoc",
-        "title": "Logtalk: generate htmldoc"
-      },
-      {
-        "command": "logtalk.generate.svgdiagrams",
-        "title": "Logtalk: generate svgdiagrams"
-      },
-      {
-        "command": "logtalk.open",
-        "title": "Logtalk: open Logtalk"
-      }
-    ],
-    "keybindings": [
-      {
-        "command": "logtalk.linter.nextErrLine",
-        "key": "f7"
-      },
-      {
-        "command": "logtalk.linter.prevErrLine",
-        "key": "shift+f7"
-      },
-      {
-        "command": "logtalk.load.document",
-        "key": "f9"
-      },
-      {
-        "command": "logtalk.run.test",
-        "key": "alt-x t"
-      },
-      {
-        "command": "logtalk.open",
-        "key": "alt-x o"
-      }
-    ],
-    "menus": {
-      "editor/context": [
-        {
-          "command": "logtalk.load.document",
-          "when": "resourceLangId == logtalk"
-        },
-        {
-          "command": "logtalk.generate.htmldoc",
-          "when": "resourceLangId == logtalk"
-        },
-        {
-          "command": "logtalk.generate.svgdiagrams",
-          "when": "resourceLangId == logtalk"
-        },
-        {
-          "command": "logtalk.linter.nextErrLine",
-          "when": "resourceLangId == logtalk"
-        },
-        {
-          "command": "logtalk.linter.prevErrLine",
-          "when": "resourceLangId == logtalk"
-        },
-        {
-          "command": "logtalk.scan.deadCode",
-          "when": "resourceLangId == logtalk"
-        }
-      ],
-      "explorer/context": [
-        {
-          "command": "logtalk.load.document",
-          "when": "resourceLangId == logtalk"
-        },
-        {
-          "command": "logtalk.generate.htmldoc",
-          "when": "resourceLangId == logtalk"
-        },
-        {
-          "command": "logtalk.generate.svgdiagrams",
-          "when": "resourceLangId == logtalk"
-        },
-        {
-          "command": "logtalk.scan.deadCode",
-          "when": "resourceLangId == logtalk"
-        }
-      ]
+    "name": "vsc-logtalk",
+    "displayName": "VSC-Logtalk",
+    "description": "Support for Logtalk language",
+    "version": "0.2.0",
+    "publisher": "arthurwang",
+    "icon": "images/logtalk.png",
+    "license": "MIT",
+    "engines": {
+        "vscode": "^1.6.0"
     },
-    "debuggers": [],
-    "configuration": {
-      "title": "",
-      "properties": {
-        "logtalk.executablePath": {
-          "type": "string",
-          "default": "/usr/bin/logtalk",
-          "description": "Points to the Logtalk executable."
-        },
-        "logtalk.terminal.runtimeArgs": {
-          "type": "array",
-          "description": "Arguments of Logtalk executable run in terminal.",
-          "default": []
-        }
-      }
+    "categories": [
+        "Languages",
+        "Snippets",
+        "Linters"
+    ],
+    "keywords": [
+        "logtalk",
+        "linter",
+        "snippet"
+    ],
+    "author": {
+        "name": "Arthur Wang",
+        "email": "rthrwang@gmail.com"
     },
-    "configurationDefaults": {
-      "[logtalk]": {
-        "editor.tabSize": 4,
-        "editor.insertSpaces": false,
-        "editor.wordWrap": "on"
-      }
+    "repository": {
+        "type": "git",
+        "url": "https://github.com/arthwang/vsc-logtalk.git"
+    },
+    "bugs": {
+        "url": "https://github.com/arthwang/vsc-logtalk/issues",
+        "email": "rthrwang@gmail.com"
+    },
+    "main": "./out/src/extension",
+    "activationEvents": [
+        "onLanguage:logtalk"
+    ],
+    "contributes": {
+        "languages": [
+            {
+                "id": "logtalk",
+                "aliases": [
+                    "Logtalk"
+                ],
+                "configuration": "./logtalk.configuration.json",
+                "extensions": [
+                    ".lgt"
+                ]
+            }
+        ],
+        "grammars": [
+            {
+                "language": "logtalk",
+                "scopeName": "source.logtalk",
+                "path": "./syntaxes/Logtalk.tmLanguage"
+            }
+        ],
+        "snippets": [
+            {
+                "language": "logtalk",
+                "path": "./snippets/logtalk.json"
+            }
+        ],
+        "commands": [
+            {
+                "command": "logtalk.linter.nextErrLine",
+                "title": "Logtalk: Goto next error line"
+            },
+            {
+                "command": "logtalk.linter.prevErrLine",
+                "title": "Logtalk: Goto previous error line"
+            },
+            {
+                "command": "logtalk.load.document",
+                "title": "Logtalk: load document"
+            },
+            {
+                "command": "logtalk.run.test",
+                "title": "Logtalk: run test"
+            },
+            {
+                "command": "logtalk.scan.deadCode",
+                "title": "Logtalk: scan dead code"
+            },
+            {
+                "command": "logtalk.run.doclet",
+                "title": "Logtalk: run doclet"
+            },
+            {
+                "command": "logtalk.generate.htmldoc",
+                "title": "Logtalk: generate htmldoc"
+            },
+            {
+                "command": "logtalk.generate.svgdiagrams",
+                "title": "Logtalk: generate svgdiagrams"
+            },
+            {
+                "command": "logtalk.open",
+                "title": "Logtalk: open Logtalk"
+            }
+        ],
+        "keybindings": [
+            {
+                "command": "logtalk.linter.nextErrLine",
+                "key": "f7"
+            },
+            {
+                "command": "logtalk.linter.prevErrLine",
+                "key": "shift+f7"
+            },
+            {
+                "command": "logtalk.load.document",
+                "key": "f9"
+            },
+            {
+                "command": "logtalk.run.test",
+                "key": "alt-x t"
+            },
+            {
+                "command": "logtalk.open",
+                "key": "alt-x o"
+            }
+        ],
+        "menus": {
+            "editor/context": [
+                {
+                    "command": "logtalk.load.document",
+                    "when": "resourceLangId == logtalk"
+                },
+                {
+                    "command": "logtalk.generate.htmldoc",
+                    "when": "resourceLangId == logtalk"
+                },
+                {
+                    "command": "logtalk.generate.svgdiagrams",
+                    "when": "resourceLangId == logtalk"
+                },
+                {
+                    "command": "logtalk.linter.nextErrLine",
+                    "when": "resourceLangId == logtalk"
+                },
+                {
+                    "command": "logtalk.linter.prevErrLine",
+                    "when": "resourceLangId == logtalk"
+                },
+                {
+                    "command": "logtalk.scan.deadCode",
+                    "when": "resourceLangId == logtalk"
+                }
+            ],
+            "explorer/context": [
+                {
+                    "command": "logtalk.load.document",
+                    "when": "resourceLangId == logtalk"
+                },
+                {
+                    "command": "logtalk.generate.htmldoc",
+                    "when": "resourceLangId == logtalk"
+                },
+                {
+                    "command": "logtalk.generate.svgdiagrams",
+                    "when": "resourceLangId == logtalk"
+                },
+                {
+                    "command": "logtalk.scan.deadCode",
+                    "when": "resourceLangId == logtalk"
+                }
+            ]
+        },
+        "debuggers": [],
+        "configuration": {
+            "title": "",
+            "properties": {
+                "logtalk.executablePath": {
+                    "type": "string",
+                    "default": "/usr/bin/logtalk",
+                    "description": "Points to the Logtalk executable."
+                },
+                "logtalk.terminal.runtimeArgs": {
+                    "type": "array",
+                    "description": "Arguments of Logtalk executable run in terminal.",
+                    "default": []
+                }
+            }
+        },
+        "configurationDefaults": {
+            "[logtalk]": {
+                "editor.tabSize": 4,
+                "editor.insertSpaces": false,
+                "editor.wordWrap": "on"
+            }
+        }
+    },
+    "scripts": {
+        "vscode:prepublish": "tsc -p ./",
+        "compile": "tsc -watch -p ./",
+        "postinstall": "node ./node_modules/vscode/bin/install",
+        "test": "node ./node_modules/vscode/bin/test",
+        "syntax4logtalk": "yaml2json --pretty --save ./syntaxes/logtalk.tmLanguage.yaml",
+        "pkgvars": "node ./node_modules/vscode/bin/install"
+    },
+    "devDependencies": {
+        "@types/bluebird": "^3.5.11",
+        "@types/mocha": "^2.2.43",
+        "@types/node": "^8.0.28",
+        "typescript": "^2.5.2",
+        "vscode": "^1.1.5"
+    },
+    "dependencies": {
+        "child-process-promise": "^2.2.1",
+        "fs-extra-plus": "^0.1.3",
+        "jsesc": "^2.5.1",
+        "node": "^8.3.0",
+        "path": "^0.12.7",
+        "process-promises": "^1.0.0",
+        "split": "^1.0.1",
+        "stack-trace": "0.0.10",
+        "vscode-debugadapter": "^1.23.0",
+        "xmldom": "^0.1.27",
+        "xpath": "0.0.24"
     }
-  },
-  "scripts": {
-    "vscode:prepublish": "tsc -p ./",
-    "compile": "tsc -watch -p ./",
-    "postinstall": "node ./node_modules/vscode/bin/install",
-    "test": "node ./node_modules/vscode/bin/test",
-    "syntax4logtalk":
-      "yaml2json --pretty --save ./syntaxes/logtalk.tmLanguage.yaml",
-    "pkgvars": "node ./node_modules/vscode/bin/install"
-  },
-  "devDependencies": {
-    "@types/bluebird": "^3.5.11",
-    "@types/mocha": "^2.2.43",
-    "@types/node": "^8.0.28",
-    "typescript": "^2.5.2",
-    "vscode": "^1.1.5"
-  },
-  "dependencies": {
-    "child-process-promise": "^2.2.1",
-    "fs-extra-plus": "^0.1.3",
-    "jsesc": "^2.5.1",
-    "node": "^8.3.0",
-    "path": "^0.12.7",
-    "process-promises": "^1.0.0",
-    "split": "^1.0.1",
-    "stack-trace": "0.0.10",
-    "vscode-debugadapter": "^1.23.0",
-    "xmldom": "^0.1.27",
-    "xpath": "0.0.24"
-  }
 }
