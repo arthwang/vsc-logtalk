@@ -64,12 +64,12 @@ handle_document(SubDir, Html) :-
     gen_body(Code, Arity, BodyLst),
     atomic_list_concat(BodyLst, ", ", Body1),
     (   Arity="0"
-    ->  atomic_list_concat([DirecName, ".\n", Body1], FullBody1)
-    ;   atomic_list_concat([DirecName, "(", Body1, ").\n$0"], FullBody1)
+    ->  atomic_list_concat([DirecName, Body1], FullBody1)
+    ;   atomic_list_concat([DirecName, "(", Body1, ")"], FullBody1)
     ),
     (   SubDir=="directives"
-    ->  atom_concat(":- ", FullBody1, FullBody)
-    ;   FullBody=FullBody1
+    ->  atomic_list_concat([":- ", FullBody1, ".\n"], FullBody)
+    ;   atom_concat(FullBody1, "$0\n", FullBody)
     ),
     xpath(Dom, //p(text), Desc),
     xpath(Dom, //pre(2, text), Mode),
