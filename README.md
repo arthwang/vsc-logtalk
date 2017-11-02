@@ -13,7 +13,7 @@ This extension can be installed via extensions viewlet of VS Code or 'Extensions
   * [Syntax highlighting](#syntax-highlighting)
   * [Snippets](#indentation-snippets-and-auto-completion)
   * [Grammar Linter](#grammar-linter)
-  * [Load active source file](#load-active-source-file)
+  * [Commands](#commands)
 
 ## Feature descriptions and usages
   
@@ -74,20 +74,37 @@ This extension can be installed via extensions viewlet of VS Code or 'Extensions
 ### Grammar linter
   * The grammar errors (if any) will display in OUTPUT channel when active source file is saved.
   
-  * Command 'Goto next/previous error':  This command (default mapping to f7/shift f7) locates the cursor at the nearest line with error/warning from current cursor location and the corresponding error/warning message displays in output channel.
+  * Command 'Goto next/previous error': see section Commands below. 
 
   ![linter](images/linter.gif)
 
 
-### Load active source file
+### Commands
+
+#### Project specified commands
+  Project specified commands can be triggered from command palette via entering 'logtalk' to pop up the list of all commands of VSC-Logtalk.
+
+| Command | Description | Key binding |
+| ----: | :---- | :---- |
+| Open logtalk | Open logtalk in an integrated terminal | alt-x o |
+| Run unit test | Run the tester file under the project root directory | alt-x t |
+| Run doclet | Run the doclet file under the project root directory | |
+
+### Source file specified commands
+  These commands can be triggered from editor/context and explorer/context menus via right click editor area or lgt files in explorer area respectively.
+
+
+| Command | Description | Key binding |
+|----:|:-----|:----|
+| Load document | Load active source file to logtalk process | F9 |
+| Goto next/previous error line | Locate cursor to the nearest line with error/warning from current cursor location and the corresponding error/warning message displays in output channel | F7/shift-F7 |
+| Scan dead codes | Scan active file for dead codes ||
+| Generate HTML document | Generate HTML document for active file ||
+| Generate SVG diagrams | Generate SVG diagrams for active file ||
 
   * Command 'Logtalk: load document' 
 
-    This command can be triggered from command palette or editor context menu (default map to F9). It loads the source file in active editor into logtalk process in the integrated terminal, spawning the logtalk process if run the command firstly. The logtalk process provides a real REPL console. 
-
   ![loader](images/loader.gif)
-  
-  > You can open Logtalk terminal indepently by 'Logtalk: open logtalk' command.
 
 ## Configurations
   
@@ -107,7 +124,7 @@ This extension can be installed via extensions viewlet of VS Code or 'Extensions
   [Pull requests](https://github.com/arthwang/vsc-logtalk/pulls) are welcome.
 
 ## Acknowledgements
-  The author of this extension thanks Professor Paulo Moura who is the author of Logtalk for his patient helps and supports. Syntax tmLanguage and some snippets are integrated from his distro of Logtalk.
+  The author of this extension thanks Professor Paulo Moura who is the author of Logtalk for his patient helps and supports. Syntax tmLanguage, some snippets and some commands are integrated from his distro of Logtalk.
 
 ## License
 

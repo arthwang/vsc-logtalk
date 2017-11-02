@@ -44,8 +44,38 @@ export function activate(context: ExtensionContext) {
     },
     {
       command: "logtalk.load.document",
+      callback: uri => {
+        LogtalkTerminal.loadDocument(uri);
+      }
+    },
+    {
+      command: "logtalk.run.test",
       callback: () => {
-        LogtalkTerminal.loadDocument();
+        LogtalkTerminal.runUnitTest();
+      }
+    },
+    {
+      command: "logtalk.run.doclet",
+      callback: () => {
+        LogtalkTerminal.runDoclet();
+      }
+    },
+    {
+      command: "logtalk.scan.deadCode",
+      callback: uri => {
+        LogtalkTerminal.scanForDeadCode(uri);
+      }
+    },
+    {
+      command: "logtalk.generate.htmldoc",
+      callback: uri => {
+        LogtalkTerminal.genHtmlDoc(uri);
+      }
+    },
+    {
+      command: "logtalk.generate.svgdiagrams",
+      callback: uri => {
+        LogtalkTerminal.genSVGDiagrams(uri);
       }
     },
     {
