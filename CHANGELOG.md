@@ -1,5 +1,8 @@
 # Changelog
 
+## [0.2.2]
+- updated readme
+
 ## [0.2.1]
 - fixed some bugs in terminal
 

@@ -91,7 +91,7 @@ This extension can be installed via extensions viewlet of VS Code or 'Extensions
 | Run doclet | Run the doclet file under the project root directory | |
 
 ### Source file specified commands
-  These commands can be triggered from editor/context and explorer/context menus via right click editor area or lgt files in explorer area respectively.
+  These commands can be triggered from editor/context and explorer/context menus via right click editor area or lgt files in explorer area respectively. In explorer context, the file name at which right click occurs will be passed in the command as argument. File specified commands can also be triggered from command palette so that active file name in the editor will be passed in the command.
 
 
 | Command | Description | Key binding |
