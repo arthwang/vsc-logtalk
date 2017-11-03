@@ -1,5 +1,8 @@
 # Changelog
 
+## [0.2.1]
+- fixed some bugs in terminal
+
 ## [0.2.0]
 - merged tasks.json commands from the distro
 
