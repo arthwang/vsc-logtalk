@@ -1,5 +1,8 @@
 # Changelog
 
+## [0.2.3]
+- refined commands
+
 ## [0.2.2]
 - updated readme
 

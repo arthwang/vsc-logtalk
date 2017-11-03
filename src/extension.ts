@@ -50,14 +50,14 @@ export function activate(context: ExtensionContext) {
     },
     {
       command: "logtalk.run.test",
-      callback: () => {
-        LogtalkTerminal.runUnitTest();
+      callback: uri => {
+        LogtalkTerminal.runUnitTest(uri);
       }
     },
     {
       command: "logtalk.run.doclet",
-      callback: () => {
-        LogtalkTerminal.runDoclet();
+      callback: uri => {
+        LogtalkTerminal.runDoclet(uri);
       }
     },
     {
