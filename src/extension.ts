@@ -49,9 +49,9 @@ export function activate(context: ExtensionContext) {
       }
     },
     {
-      command: "logtalk.run.test",
+      command: "logtalk.run.tests",
       callback: uri => {
-        LogtalkTerminal.runUnitTest(uri);
+        LogtalkTerminal.runTests(uri);
       }
     },
     {
@@ -67,15 +67,15 @@ export function activate(context: ExtensionContext) {
       }
     },
     {
-      command: "logtalk.generate.htmldoc",
+      command: "logtalk.generate.documentation",
       callback: uri => {
-        LogtalkTerminal.genHtmlDoc(uri);
+        LogtalkTerminal.genDocumentation(uri);
       }
     },
     {
-      command: "logtalk.generate.svgdiagrams",
+      command: "logtalk.generate.diagrams",
       callback: uri => {
-        LogtalkTerminal.genSVGDiagrams(uri);
+        LogtalkTerminal.genDiagrams(uri);
       }
     },
     {
