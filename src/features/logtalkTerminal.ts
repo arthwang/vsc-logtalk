@@ -80,7 +80,7 @@ export default class LogtalkTerminal {
     LogtalkTerminal.sendString(goals);
   }
 
-  public static runUnitTest(uri: Uri) {
+  public static runTests(uri: Uri) {
     LogtalkTerminal.createLogtalkTerm();
     let dir: string;
     if (uri && uri.fsPath) {
@@ -101,7 +101,7 @@ export default class LogtalkTerminal {
     LogtalkTerminal.sendString(goals);
   }
 
-  public static genHtmlDoc(uri: Uri) {
+  public static genDocumentation(uri: Uri) {
     LogtalkTerminal.createLogtalkTerm();
     let dir: string = LogtalkTerminal.ensureDir(uri);
     const xmlDir = path.join(dir, "xml_docs");
@@ -116,7 +116,7 @@ export default class LogtalkTerminal {
     );
   }
 
-  public static genSVGDiagrams(uri: Uri) {
+  public static genDiagrams(uri: Uri) {
     LogtalkTerminal.createLogtalkTerm();
     let dir: string = LogtalkTerminal.ensureDir(uri);
     let goals = `logtalk_load(diagrams(loader)),diagrams::directory('${dir}').`;

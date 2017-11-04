@@ -7,7 +7,7 @@ __________________
 
 ## Note before installation
 
-This extension can be installed via extensions viewlet of VS Code or 'Extensions: install extension' command from the command palette. The author notices that it is developed and tested in ***logtalk 3.12.0*** and ***VS Code 1.17*** on ***Debian 9.0*** (stretch). It's not yet tested under other environments.
+This extension can be installed via extensions viewlet of VS Code or 'Extensions: install extension' command from the command palette. The author notices that it is developed and tested in ***Logtalk 3.12.0*** and ***VS Code 1.17*** on ***Debian 9.0*** (stretch). It's not yet tested under other environments.
 
 ## Features
   * [Syntax highlighting](#syntax-highlighting)
@@ -17,9 +17,10 @@ This extension can be installed via extensions viewlet of VS Code or 'Extensions
 
 ## Feature descriptions and usages
   
-### syntax highlighting
+### Syntax highlighting
 
-  * Prolog like syntax highlighting
+  * Full syntax highlight for all Logtalk built-in control constructs, directives, methods, and predicates
+  * Full syntax highlight for all ISO Prolog standard built-in control constructs, directives, and predicates
   * Built-ins pattern support
 
 ### Indentation, snippets and auto-completion
@@ -86,23 +87,23 @@ This extension can be installed via extensions viewlet of VS Code or 'Extensions
 
 | Command | Description | Key binding |
 | ----: | :---- | :---- |
-| Open logtalk | Open logtalk in an integrated terminal | alt-x o |
-| Run unit test | Run the tester file under the project root directory | |
-| Run doclet | Run the doclet file under the project root directory | |
+| Open Logtalk | Opens Logtalk in an integrated terminal | alt-x o |
+| Run tests | Runs the tester file under the project root directory | |
+| Run doclet | Runs the doclet file under the project root directory | |
 
 ### Source file specified commands
-  These commands can be triggered from editor/context and explorer/context menus via right click editor area or lgt files in explorer area respectively. In explorer context, the file name at which right click occurs will be passed in the command as argument. File specified commands can also be triggered from command palette so that active file name in the editor will be passed in the command.
+  These commands can be triggered from editor/context and explorer/context menus via right click editor area or Logtalk files in explorer area respectively. In explorer context, the file name at which right click occurs will be passed in the command as argument. File specified commands can also be triggered from command palette so that active file name in the editor will be passed in the command.
 
 
 | Command | Description | Key binding |
 |----:|:-----|:----|
-| Load document | Load active source file to logtalk process | F9 |
-| Run unit test | Run the tester file under the directory where active source file locates | |
-| Run doclet | Run the doclet file under the directory where active source file locates | |
+| Load document | Loads the active source file into the Logtalk process | F9 |
+| Run tests | Runs the tester file under the active source file directory | |
+| Run doclet | Run the doclet file under the active source file directory | |
 | Goto next/previous error line | Locate cursor to the nearest line with error/warning from current cursor location and the corresponding error/warning message displays in output channel | F7/shift-F7 |
-| Scan dead codes | Scan active file for dead codes ||
-| Generate HTML document | Generate HTML document for active file ||
-| Generate SVG diagrams | Generate SVG diagrams for active file ||
+| Scan dead code | Scans active file for dead code ||
+| Generate API documentation | Generates API documentation for the files under the active source file directory ||
+| Generate diagrams | Generates diagrams for the files under the active source file directory ||
 
   * Command 'Logtalk: load document' 
 
@@ -110,30 +111,30 @@ This extension can be installed via extensions viewlet of VS Code or 'Extensions
 
 ## Configurations
   
-  * The user can configure settings via VS Code menu File/Preferences/Settings.  Entering 'logtalk' in the input box will show up logtalk settings. There are only two settings in this extension with default values:
-    * "logtalk.executablePath": "/usr/local/bin/logtalk"
+  * The user can configure settings via VS Code menu File/Preferences/Settings.  Entering 'logtalk' in the input box will show up Logtalk settings. The settings in this extension with their default values are:
+    * "logtalk.executable": "/usr/local/bin/logtalk"
 
-      This setting points to the Logtalk executable. Use real path to the executable i.e. swilgt.sh if symbolic link doesn't run in VSC-Logtalk.
+      This setting points to the Logtalk executable, which can be created by running the `logtalk_backend_select` script. In alternative, use the absolute path to the integration script you want to use, e.g. `swilgt` or `swilgt.sh`.
 
-    * "logtalk.terminal.runtimeArgs": [ ]
+    * "logtalk.executable.arguments": [ ]
 
       Arguments of Logtalk executable run in terminal.
 
-    * "logtalk.lgtdoc.script": "/usr/local/bin/lgt2html"
+    * "logtalk.documentation.script": "/usr/local/bin/lgt2html"
 
-      Convert XML generated by Logtalk to (X)HTML.
+      Script for converting the XML files generated by the Logtalk `lgtdoc` tool.
 
-    * "logtalk.lgtdoc.arguments": [ ]
+    * "logtalk.documentation.arguments": [ ]
 
-      Arguments of HTML converter.
+      Arguments for the script that converts the XML files generated by the Logtalk `lgtdoc` tool.
 
     * "logtalk.graphviz.executable": "/usr/local/bin/dot"
 
-      Graph converter.
+      Graphviz executable for converting the `.dot` files generated by the Logtalk `diagrams` tool.
 
     * "logtalk.graphviz.arguments": ["-Tsvg"]
 
-      Arguments of graph converter.
+      Arguments for the Graphviz executable that converts the `.dot` files generated by the Logtalk `diagrams` tool.
 
 ## Bug reporting
 
