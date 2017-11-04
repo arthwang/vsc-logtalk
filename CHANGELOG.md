@@ -1,5 +1,8 @@
 # Changelog
 
+## [0.2.5]
+- merged pr from Paulo Moura
+
 ## [0.2.4]
 - added saving dirty files before exec commands
 
