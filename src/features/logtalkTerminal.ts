@@ -73,9 +73,9 @@ export default class LogtalkTerminal {
     LogtalkTerminal._terminal.show(true);
   }
 
-  public static loadDocument(uri: Uri) {
+  public static async loadDocument(uri: Uri) {
     LogtalkTerminal.createLogtalkTerm();
-    const file: string = LogtalkTerminal.ensureFile(uri);
+    const file: string = await LogtalkTerminal.ensureFile(uri);
     let goals = `set_logtalk_flag(report,warnings),logtalk_load('${file}').`;
     LogtalkTerminal.sendString(goals);
   }
@@ -128,21 +128,31 @@ export default class LogtalkTerminal {
       { cwd: dir }
     );
   }
-  public static scanForDeadCode(uri: Uri) {
+  public static async scanForDeadCode(uri: Uri) {
     LogtalkTerminal.createLogtalkTerm();
-    const file: string = LogtalkTerminal.ensureFile(uri);
+    const file: string = await LogtalkTerminal.ensureFile(uri);
     let goals = `set_logtalk_flag(report, warnings),logtalk_load('${file}'),flush_output,logtalk_load(dead_code_scanner(loader)),dead_code_scanner::all.`;
     LogtalkTerminal.sendString(goals);
   }
 
-  private static ensureFile(uri: Uri): string {
+  private static async ensureFile(uri: Uri): Promise<string> {
     let file: string;
+    let doc: TextDocument;
+
     if (uri && uri.fsPath) {
-      file = uri.fsPath;
+      doc = workspace.textDocuments.find(txtDoc => {
+        return txtDoc.uri.fsPath === uri.fsPath;
+      });
+      if (!doc) {
+        doc = await workspace.openTextDocument(uri);
+      }
+
+      // file = uri.fsPath;
     } else {
-      file = window.activeTextEditor.document.fileName;
+      doc = window.activeTextEditor.document;
     }
-    return file;
+    await doc.save();
+    return await doc.fileName;
   }
 
   private static ensureDir(uri: Uri): string {

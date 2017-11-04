@@ -1,5 +1,8 @@
 # Changelog
 
+## [0.2.4]
+- added saving dirty files before exec commands
+
 ## [0.2.3]
 - refined commands
 
