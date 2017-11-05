@@ -64,11 +64,11 @@
         "commands": [
             {
                 "command": "logtalk.linter.nextErrLine",
-                "title": "Logtalk: Goto next error line"
+                "title": "Logtalk: Goto Next Error"
             },
             {
                 "command": "logtalk.linter.prevErrLine",
-                "title": "Logtalk: Goto previous error line"
+                "title": "Logtalk: Goto Previous Error"
             },
             {
                 "command": "logtalk.load.document",
