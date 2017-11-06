@@ -15,11 +15,11 @@ import {
 } from "vscode";
 
 import { loadEditHelpers } from "./features/editHelpers";
-// import { Utils } from "./utils/utils";
+import { Utils } from "./utils/utils";
 import LogtalkDocumentHighlightProvider from "./features/documentHighlightProvider";
 import LogtalkTerminal from "./features/logtalkTerminal";
 import LogtalkLinter from "./features/logtalkLinter";
-// import LogtalkHoverProvider from "./features/hoverProvider";
+import LogtalkHoverProvider from "./features/hoverProvider";
 
 export function activate(context: ExtensionContext) {
   console.log('Congratulations, your extension "vsc-logtalk" is now active!');
@@ -29,6 +29,8 @@ export function activate(context: ExtensionContext) {
   loadEditHelpers(context.subscriptions);
   const linter = new LogtalkLinter(context);
   linter.activate();
+  Utils.init(context);
+
   let myCommands = [
     {
       command: "logtalk.linter.nextErrLine",
@@ -97,9 +99,9 @@ export function activate(context: ExtensionContext) {
       new LogtalkDocumentHighlightProvider()
     )
   );
-  // context.subscriptions.push(
-  //   languages.registerHoverProvider(LOGTALK_MODE, new LogtalkHoverProvider())
-  // );
+  context.subscriptions.push(
+    languages.registerHoverProvider(LOGTALK_MODE, new LogtalkHoverProvider())
+  );
   context.subscriptions.push(LogtalkTerminal.init());
 }
 // this method is called when your extension is deactivated
