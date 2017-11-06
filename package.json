@@ -272,6 +272,7 @@
         "@types/bluebird": "^3.5.11",
         "@types/mocha": "^2.2.43",
         "@types/node": "^8.0.28",
+        "html2commonmark": "^0.6.1",
         "typescript": "^2.5.2",
         "vscode": "^1.1.5"
     },

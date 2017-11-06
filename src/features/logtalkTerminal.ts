@@ -37,7 +37,9 @@ export default class LogtalkTerminal {
       "tester.script",
       "logtalk_tester"
     );
-    LogtalkTerminal._outputChannel = window.createOutputChannel("Test&Doclet");
+    LogtalkTerminal._outputChannel = window.createOutputChannel(
+      "Logtalk Test&Doclet"
+    );
     LogtalkTerminal._testerArgs = section.get<string[]>("tester.arguments");
     LogtalkTerminal._docletExec = section.get<string>(
       "doclet.script",
