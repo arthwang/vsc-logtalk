@@ -1,5 +1,8 @@
 # Changelog
 
+## [0.3.2]
+- just use snippet descriptions for hover
+
 ## [0.3.1]
 - bug fix for 'run tester' and 'run doclets'
 

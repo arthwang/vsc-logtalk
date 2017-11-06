@@ -54,6 +54,25 @@ export class Utils {
     return keys;
   }
 
+  public static getSnippetDescription(
+    doc: TextDocument,
+    pred: string
+  ): string[] {
+    const docTxt = doc.getText();
+    let descs: string[] = [];
+    const re = new RegExp("^\\w+:" + pred);
+    for (let key in Utils.snippets) {
+      if (re.test(key)) {
+        let desc = descs.push(
+          Utils.snippets[key].description
+            .replace("Description", "")
+            .replace("Template and modes", "Template and modes\n")
+        );
+      }
+    }
+    return descs;
+  }
+
   public static getPredicateUnderCursor(
     doc: TextDocument,
     position: Position

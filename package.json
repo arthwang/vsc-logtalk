@@ -2,7 +2,7 @@
     "name": "vsc-logtalk",
     "displayName": "VSC-Logtalk",
     "description": "Support for Logtalk language",
-    "version": "0.3.1",
+    "version": "0.3.2",
     "publisher": "arthurwang",
     "icon": "images/logtalk.png",
     "license": "MIT",
@@ -272,6 +272,7 @@
         "@types/bluebird": "^3.5.11",
         "@types/mocha": "^2.2.43",
         "@types/node": "^8.0.28",
+        "html2commonmark": "^0.6.1",
         "typescript": "^2.5.2",
         "vscode": "^1.1.5"
     },
