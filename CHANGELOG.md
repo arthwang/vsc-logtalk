@@ -1,5 +1,8 @@
 # Changelog
 
+## [0.3.1]
+- bug fix for 'run tester' and 'run doclets'
+
 ## [0.3.0]
 - hover information
 

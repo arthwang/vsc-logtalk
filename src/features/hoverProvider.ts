@@ -31,20 +31,22 @@ export default class LogtalkHoverProvider implements HoverProvider {
   private getHTMLDoc(doc: TextDocument, position: Position): MarkedString[] {
     let pi = Utils.getPredicateUnderCursor(doc, position);
     let keys = Utils.getSnippetKeys(doc, pi);
-    let str: MarkedString[] = keys.map(key => {
+    // let str: MarkedString[] = keys.map(key => {
+    let str: string[] = keys.map(key => {
       key += ".html";
       let file = path.join(Utils.REFMANPATH, key);
       let data = fs.readFileSync(file, { encoding: "UTF-8" });
       let htmldoc = new DOMParser().parseFromString(data);
       let txt: string = xpath
-        .select(".//*[not(name() = 'div')]/text()", htmldoc)
+        .select("//*[not(name()='div')]/text()", htmldoc)
         .join("")
         .toString()
         .replace(/^\s*$/gm, "");
-      return {
-        language: "logtalk",
-        value: txt
-      };
+      return txt;
+      // return {
+      //   language: "logtalk",
+      //   value: txt
+      // };
     });
 
     return str;

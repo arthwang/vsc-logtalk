@@ -13,6 +13,7 @@ import {
 import * as path from "path";
 import * as jsesc from "jsesc";
 import * as cp from "child_process";
+import { spawn } from "process-promises";
 import LogtalkLinter from "./logtalkLinter";
 
 export default class LogtalkTerminal {
@@ -26,6 +27,7 @@ export default class LogtalkTerminal {
   private static _graphvizExec: string;
   private static _graphvizArgs: string[];
   private static _graphvizExt: string[];
+  private static _outputChannel: OutputChannel;
 
   constructor() {}
 
@@ -35,6 +37,7 @@ export default class LogtalkTerminal {
       "tester.script",
       "logtalk_tester"
     );
+    LogtalkTerminal._outputChannel = window.createOutputChannel("Test&Doclet");
     LogtalkTerminal._testerArgs = section.get<string[]>("tester.arguments");
     LogtalkTerminal._docletExec = section.get<string>(
       "doclet.script",
@@ -151,21 +154,43 @@ export default class LogtalkTerminal {
 
   public static runTesters() {
     LogtalkTerminal.createLogtalkTerm();
-    let dir: string;
-    dir = workspace.rootPath;
-    cp.execSync(
-      `${LogtalkTerminal._testerExec} ${LogtalkTerminal._testerArgs}`,
-      { cwd: dir }
+    LogtalkTerminal.spawnScript(
+      ["logtalk_tester", "logtalk.run.tester", LogtalkTerminal._testerExec],
+      LogtalkTerminal._testerExec,
+      LogtalkTerminal._testerArgs
     );
   }
-
-  public static runDoclets() {
-    LogtalkTerminal.createLogtalkTerm();
+  private static spawnScript(type: string[], path: string, args: string[]) {
     let dir: string;
     dir = workspace.rootPath;
-    cp.execSync(
-      `${LogtalkTerminal._docletExec} ${LogtalkTerminal._docletArgs}`,
-      { cwd: dir }
+    let pp = spawn(path, args, { cwd: dir })
+      .on("stdout", out => {
+        LogtalkTerminal._outputChannel.append(out + "\n");
+        LogtalkTerminal._outputChannel.show(true);
+      })
+      .on("stderr", err => {
+        LogtalkTerminal._outputChannel.append(err + "\n");
+        LogtalkTerminal._outputChannel.show(true);
+      })
+      .catch(error => {
+        let message: string = null;
+        if ((<any>error).code === "ENOENT") {
+          message = `Cannot run the ${type[0]} script. The script was not found. Use the '${type[1]}' setting to configure`;
+        } else {
+          message = error.message
+            ? error.message
+            : `Failed to run the script ${type[0]} using path: ${type[2]}. Reason is unknown.`;
+        }
+        this._outputChannel.append(message);
+        this._outputChannel.show(true);
+      });
+  }
+  public static runDoclets() {
+    LogtalkTerminal.createLogtalkTerm();
+    LogtalkTerminal.spawnScript(
+      ["logtalk_doclet", "logtalk.run.doclets", LogtalkTerminal._docletExec],
+      LogtalkTerminal._docletExec,
+      LogtalkTerminal._docletArgs
     );
   }
 
