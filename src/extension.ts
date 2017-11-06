@@ -85,6 +85,18 @@ export function activate(context: ExtensionContext) {
       callback: () => {
         LogtalkTerminal.openLogtalk();
       }
+    },
+    {
+      command: "logtalk.run.testers",
+      callback: uri => {
+        LogtalkTerminal.runTesters();
+      }
+    },
+    {
+      command: "logtalk.run.doclets",
+      callback: uri => {
+        LogtalkTerminal.runDoclets();
+      }
     }
   ];
   myCommands.map(command => {
