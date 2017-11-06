@@ -21,3 +21,5 @@
 !node_modules/through/**/*
 !node_modules/vscode-debugadapter/**/*
 !node_modules/vscode-debugprotocol/**/*
+!node_modules/xpath/**/*
+!node_modules/xmldom/**/*

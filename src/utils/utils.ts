@@ -16,12 +16,11 @@ interface ISnippet {
 import * as fs from "fs";
 import * as cp from "child_process";
 import * as jsesc from "jsesc";
-// import * as path from "path";
+
 export class Utils {
   private static snippets: ISnippet = null;
   public static CONTEXT: ExtensionContext | null = null;
   public static RUNTIMEPATH: string = "logtalk";
-  public static DEFAULTMODULES: string[];
   public static REFMANPATH: string;
 
   constructor() {}
@@ -43,24 +42,18 @@ export class Utils {
     let snippets = fs.readFileSync(snippetsPath, "utf8").toString();
     Utils.snippets = JSON.parse(snippets);
   }
-  // public static getPredDescriptions(pred: string): string {
-  //   const docTxt = window.activeTextEditor.document.getText();
-  //   let descs: string = "";
-  //   const re = new RegExp("^\\w+:" + pred);
-  //   for (let key in Utils.snippets) {
-  //     if (re.test(key)) {
-  //       let mod = key.split(":")[0];
-  //       if (
-  //         new RegExp("import\\s+.*\\b" + mod + "\\b").test(docTxt) ||
-  //         Utils.DEFAULTMODULES.indexOf(mod) > -1
-  //       ) {
-  //         descs +=
-  //           key.replace(":", ".") + ":" + Utils.snippets[key].description;
-  //       }
-  //     }
-  //   }
-  //   return descs;
-  // }
+  public static getSnippetKeys(doc: TextDocument, pred: string): string[] {
+    const docTxt = doc.getText();
+    let keys: string[] = [];
+    const re = new RegExp("^\\w+:" + pred);
+    for (let key in Utils.snippets) {
+      if (re.test(key)) {
+        keys.push(key.replace("/", "_").replace(":", "/"));
+      }
+    }
+    return keys;
+  }
+
   public static getPredicateUnderCursor(
     doc: TextDocument,
     position: Position
@@ -72,8 +65,9 @@ export class Utils {
     let arity = 0;
     let name = doc.getText(wordRange);
     let re = new RegExp("^" + name + "\\(");
-    let text = doc
-      .getText()
+    let re1 = new RegExp("^" + name + "/(\\d+)");
+    let doctext = doc.getText();
+    let text = doctext
       .split("\n")
       .slice(position.line)
       .join("")
@@ -110,6 +104,11 @@ export class Utils {
         }
       } else {
         console.log(pp.stderr.toString());
+      }
+    } else {
+      let m = text.match(re1);
+      if (m) {
+        arity = parseInt(m[1]);
       }
     }
     return name + "/" + arity;

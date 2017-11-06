@@ -1,5 +1,8 @@
 # Changelog
 
+## [0.3.0]
+- hover information
+
 ## [0.2.5]
 - merged pr from Paulo Moura
 

@@ -113,10 +113,10 @@ export default class LogtalkTerminal {
     LogtalkTerminal.sendString(goals);
   }
 
-  public static genDocumentation(uri: Uri) {
+  public static async genDocumentation(uri: Uri) {
     LogtalkTerminal.createLogtalkTerm();
     let dir: string = LogtalkTerminal.ensureDir(uri);
-    let file: string = LogtalkTerminal.ensureFile(uri);
+    let file: string = await LogtalkTerminal.ensureFile(uri);
     const xmlDir = path.join(dir, "xml_docs");
     let goals = `logtalk_load(lgtdoc(loader)),logtalk_load('${file}'),os::change_directory('${dir}'),lgtdoc::directory('${dir}').`;
     LogtalkTerminal.sendString(goals);
@@ -128,10 +128,10 @@ export default class LogtalkTerminal {
     );
   }
 
-  public static genDiagrams(uri: Uri) {
+  public static async genDiagrams(uri: Uri) {
     LogtalkTerminal.createLogtalkTerm();
     let dir: string = LogtalkTerminal.ensureDir(uri);
-    let file: string = LogtalkTerminal.ensureFile(uri);
+    let file: string = await LogtalkTerminal.ensureFile(uri);
     let goals = `logtalk_load(diagrams(loader)),logtalk_load('${file}'),os::change_directory('${dir}'),diagrams::directory('${dir}').`;
     LogtalkTerminal.sendString(goals);
     cp.execSync(
@@ -180,8 +180,6 @@ export default class LogtalkTerminal {
       if (!doc) {
         doc = await workspace.openTextDocument(uri);
       }
-
-      // file = uri.fsPath;
     } else {
       doc = window.activeTextEditor.document;
     }
