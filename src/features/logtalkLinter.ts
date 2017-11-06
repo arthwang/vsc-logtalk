@@ -216,7 +216,7 @@ export default class LogtalkLinter implements CodeActionProvider {
     );
     this.loadConfiguration();
     if (this.outputChannel === null) {
-      this.outputChannel = window.createOutputChannel("LogtalkLinter");
+      this.outputChannel = window.createOutputChannel("Logtalk Linter");
       this.outputChannel.clear();
     }
     workspace.onDidOpenTextDocument(this.doPlint, this, subscriptions);
