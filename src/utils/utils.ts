@@ -16,6 +16,7 @@ interface ISnippet {
 import * as fs from "fs";
 import * as cp from "child_process";
 import * as jsesc from "jsesc";
+import * as path from "path";
 
 export class Utils {
   private static snippets: ISnippet = null;
@@ -38,7 +39,10 @@ export class Utils {
     if (Utils.snippets) {
       return;
     }
-    let snippetsPath = context.extensionPath + "/snippets/logtalk.json";
+    let snippetsPath = path.join(
+      context.extensionPath,
+      "/snippets/logtalk.json"
+    );
     let snippets = fs.readFileSync(snippetsPath, "utf8").toString();
     Utils.snippets = JSON.parse(snippets);
   }
