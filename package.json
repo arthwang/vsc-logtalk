@@ -2,7 +2,7 @@
     "name": "vsc-logtalk",
     "displayName": "VSC-Logtalk",
     "description": "Support for Logtalk language",
-    "version": "0.3.2",
+    "version": "0.3.3",
     "publisher": "arthurwang",
     "icon": "images/logtalk.png",
     "license": "MIT",
