@@ -88,7 +88,7 @@ This extension can be installed via extensions viewlet of VS Code or 'Extensions
 | Command | Description | Key binding |
 | ----: | :---- | :---- |
 | Open Logtalk | Opens Logtalk in an integrated terminal | alt-x o |
-| Run Tester | Runs the logtalk_tester script on the project root directory | |
+| Run Testers | Runs the logtalk_tester script on the project root directory | |
 | Run Doclets | Runs the logtalk_doclet script on the project root directory | |
 
 ### Source file specified commands
@@ -100,7 +100,7 @@ This extension can be installed via extensions viewlet of VS Code or 'Extensions
 | Load Document | Loads the active source file into the Logtalk process | F9 |
 | Run Tests | Runs the tester file under the active source file directory | |
 | Run Doclet | Run the doclet file under the active source file directory | |
-| Goto next/previous error line | Locate cursor to the nearest line with error/warning from current cursor location and the corresponding error/warning message displays in output channel | F7/shift-F7 |
+| Goto Next/Previous Error | Locate cursor to the nearest line with error/warning from current cursor location and the corresponding error/warning message displays in output channel | F7/shift-F7 |
 | Scan Dead Code | Scans active file for dead code ||
 | Generate Documentation | Generates documentation for the files under the active source file directory ||
 | Generate Diagrams | Generates diagrams for the files under the active source file directory ||
@@ -165,7 +165,7 @@ This extension can be installed via extensions viewlet of VS Code or 'Extensions
   [Pull requests](https://github.com/arthwang/vsc-logtalk/pulls) are welcome.
 
 ## Acknowledgements
-  The author of this extension thanks Professor Paulo Moura who is the author of Logtalk for his patient helps and supports. Syntax tmLanguage, some snippets and some commands are integrated from his distro of Logtalk.
+  The author of this extension thanks Professor Paulo Moura who is the author of Logtalk for his patient help and support. Syntax highlighting, some snippets, and some commands are integrated from his distro of Logtalk.
 
 ## License
 
