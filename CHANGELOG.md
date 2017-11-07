@@ -1,5 +1,8 @@
 # Changelog
 
+## [0.3.3]
+- merged a pr from Paulo Moura
+
 ## [0.3.2]
 - just use snippet descriptions for hover
 
