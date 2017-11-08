@@ -1,6 +1,6 @@
 # Changelog
 
-## [0.3.3]
+## [0.3.5]
 - cancel of recursive linting
 
 ## [0.3.3]
