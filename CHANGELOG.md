@@ -1,5 +1,8 @@
 # Changelog
 
+## [0.3.6]
+- updated for syntax from the distro 3.14.0
+
 ## [0.3.5]
 - cancel of recursive linting
 
