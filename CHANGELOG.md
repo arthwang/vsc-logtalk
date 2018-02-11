@@ -1,5 +1,8 @@
 # Changelog
 
+## [0.3.7]
+- updated snippets for the date snippet variables introduced in VSC 1.20.0
+
 ## [0.3.6]
 - updated for syntax from the distro 3.14.0
 
