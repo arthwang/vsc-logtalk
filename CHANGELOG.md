@@ -1,6 +1,6 @@
 # Changelog
 
-## [0.3.10]
+## [0.3.11]
 
 * updated for syntax from the distro 3.19.0
 
