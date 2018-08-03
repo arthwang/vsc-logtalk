@@ -1,5 +1,9 @@
 # Changelog
 
+## [0.3.12]
+
+* fix 0'\Char number highlighting
+
 ## [0.3.11]
 
 * updated for syntax from the distro 3.19.0
