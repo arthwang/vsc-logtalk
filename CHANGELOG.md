@@ -2,6 +2,7 @@
 
 ## [0.3.12]
 
+* add threaded_cancel/1 highlighting
 * fix 0'\Char number highlighting
 
 ## [0.3.11]
