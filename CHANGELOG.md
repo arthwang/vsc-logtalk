@@ -2,10 +2,6 @@
 
 ## [0.3.14]
 
-* fixed 0'\Char number highlighting(PR from pmoura)
-
-## [0.3.12]
-
 * add threaded_cancel/1 highlighting
 * fix 0'\Char number highlighting
 
