@@ -1,6 +1,6 @@
 # Changelog
 
-## [0.3.13]
+## [0.3.14]
 
 * fixed 0'\Char number highlighting(PR from pmoura)
 
