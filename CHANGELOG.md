@@ -1,5 +1,9 @@
 # Changelog
 
+## [0.3.13]
+
+* fixed 0'\Char number highlighting(PR from pmoura)
+
 ## [0.3.12]
 
 * add threaded_cancel/1 highlighting
