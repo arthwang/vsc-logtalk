@@ -98,7 +98,7 @@ export function loadEditHelpers(subscriptions: Disposable[]) {
     return /,$|:-$/.test(doc.lineAt(i).text) ? true : false;
   }
 
-  function nextRecursiceParams(
+  function nextRecursiveParams(
     doc: TextDocument,
     line: number,
     originalHead: string
@@ -131,6 +131,7 @@ export function loadEditHelpers(subscriptions: Disposable[]) {
     });
     return match[1] + "(" + newList.join(", ") + ")";
   }
+  
   workspace.onDidChangeTextDocument(
     e => {
       let lastChange = e.contentChanges[0];
@@ -162,7 +163,7 @@ export function loadEditHelpers(subscriptions: Disposable[]) {
       } else if (/^\s*\.$/.test(lineTxt)) {
         let prevHead: string = getPreviousClauseHead(e.document, line - 1);
         if (isRecursive(e.document, line)) {
-          prevHead = nextRecursiceParams(e.document, line - 1, prevHead);
+          prevHead = nextRecursiveParams(e.document, line - 1, prevHead);
         }
         editor
           .edit(edit => {

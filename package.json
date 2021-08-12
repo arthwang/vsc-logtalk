@@ -265,7 +265,8 @@
         "compile": "tsc -watch -p ./",
         "test": "tsc ./tests/runTest.ts",
         "syntax4logtalk": "yaml2json --pretty --save ./syntaxes/logtalk.tmLanguage.yaml",
-        "package": "vsce package"
+        "vsix:make": "vsce package",
+        "vsix:install" : "code --install-extension vsc-logtalk-0.4.1.vsix"
     },
     "devDependencies": {
         "@types/bluebird": "^3.5.25",

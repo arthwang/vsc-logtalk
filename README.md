@@ -169,6 +169,9 @@ Feel free to report bugs or suggestions via [issues](https://github.com/arthwang
 ## Development 
 
 This extension has been package and tested with node v14.17.5 (latest LTS).
+You may install the extension directly from the .vsix file included in this repo.
+
+`vsix:make` makes the .vsix file, `vsix:install` installs it.
 
 
 ## Contributions
