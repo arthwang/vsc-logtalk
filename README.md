@@ -166,6 +166,11 @@ These commands can be triggered from editor/context and explorer/context menus v
 
 Feel free to report bugs or suggestions via [issues](https://github.com/arthwang/vsc-logtalk/issues)
 
+## Development 
+
+This extension has been package and tested with node v14.17.5 (latest LTS).
+
+
 ## Contributions
 
 [Pull requests](https://github.com/arthwang/vsc-logtalk/pulls) are welcome.
