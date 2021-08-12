@@ -284,14 +284,12 @@
         "glob": "^7.1.7",
         "jsesc": "^2.5.2",
         "mocha": "^9.0.3",
-        "node": "^8.15.0",
-        "npm": "^6.8.0",
         "path": "^0.12.7",
         "process-promises": "^1.0.0",
         "split": "^1.0.1",
         "stack-trace": "0.0.10",
         "vscode-debugadapter": "^1.33.0",
-        "xmldom": "^0.1.27",
+        "xmldom": "git+https://github.com/xmldom/xmldom.git",
         "xpath": "0.0.24"
     }
 }
